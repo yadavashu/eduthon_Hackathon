@@ -1,0 +1,15 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.dashboard-menu{
+    background-color: black;
+    width:250px;
+    height:100vh;
+    
+}
+.main-details{
+    background-color:red;
+    height:60px;
+    width:100%;
+}

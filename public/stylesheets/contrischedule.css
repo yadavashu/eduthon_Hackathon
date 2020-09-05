@@ -1,0 +1,16 @@
+body{
+    height:100vh;
+}
+.main-container{
+    background-color: blue;
+    position:relative;
+    top:-500px;
+    width:50%;
+    left:350px;
+}
+.dashboard-menu{
+height:100vh;
+}
+table, th, td {
+    border: 1px solid black;
+  }

@@ -8,6 +8,12 @@ const Contributors=require('./models/contributors')
 const mainRouter=require('./routes/main')
 const signRouter=require('./routes/student')
 const contrisignRouter=require('./routes/contributor')
+const contridashRouter=require('./routes/contridash')
+const contrischeduleRouter=require('./routes/contrischedule')
+const contrischeduledRouter=require('./routes/scheduled')
+const studentdashRouter=require('./routes/studentdash')
+const studenteacherRouter=require('./routes/studenteacher')
+const studentscheduledclassesRouter=require('./routes/scheduledclasses')
 
 const portname='localhost'
 const port=3000
@@ -26,6 +32,12 @@ const app=express();
 app.use(express.static(__dirname + '/public'))
 app.use('/student',signRouter)
 app.use('/contributor',contrisignRouter)
+app.use('/contridash',contridashRouter)
+app.use('/schedule',contrischeduleRouter)
+app.use('/scheduled',contrischeduledRouter)
+app.use('/studentdash',studentdashRouter)
+app.use('/studenteacher',studenteacherRouter)
+app.use('/scheduledclasses',studentscheduledclassesRouter)
 app.use('/',mainRouter)
 
 

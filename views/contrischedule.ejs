@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contributor Dashboard</title>
+    <link rel="stylesheet" href="/stylesheets/studashboard.css">
+    <link rel="stylesheet" href="/stylesheets/contrischedule.css">
+</head>
+<body>
+    <div class="main-details">
+        <div class="details">
+            <p>hii  <%=data%></p>
+           <a href="">logout</a>
+        </div>
+       </div>
+   <div class="dashboard-menu">
+       <div class="menu">
+       <ul>
+           <li><a href="/contridash?username=<%=data%>">Profile</a></li>
+           <li><a href=" ">Schedule a class</a></li>
+           <li><a href="/contridash/scheduledclasses?username=<%=data%>">Classes Scheduled</a></li>
+           <li><a href="/contridash/contriclassesdone?username=<%=data%>&status=done">Classes Done</a></li>
+       </ul>
+    </div>
+   </div>
+   <div class="main-container">
+       <div class="form-details">
+           <form action="/schedule/submit" method="POST">
+            <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname"> 
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username1">   
+                <label for="classtopic">Class-Topic</label>
+                <input type="text" id="classtopic" name="classtopic">  
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject"> 
+                <label for="mode">Mode</label>   
+                <select id="mode" name="mode">
+                    <option value="online">online</option>
+                    <option value="offline">offline</option>
+                  </select>
+                  <label for="date">Date</label>
+                <input type="date" id="date" name="date"> 
+                <label for="date">Time</label>
+                <input type="time" id="time" name="time"> 
+                <label for="poc">Place of Conduct</label>
+                <input type="text" id="poc" name="placeofconduct"> 
+                <label for="capacity">capacity</label>
+                <input type="text" id="capacity" name="capacity"> 
+            <button id="submit">submit</button>
+            <%=msg%>
+           </form>
+       </div>
+   </div>
+</body>
+</html>

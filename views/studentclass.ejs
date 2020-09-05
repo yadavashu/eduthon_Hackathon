@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="/stylesheets/studashboard.css">
+    <link rel="stylesheet" href="/stylesheets/contrischedule.css">
+</head>
+<body>
+    <div class="main-details">
+        <div class="details">
+            <p>hii  <%=data%></p>
+           <a href="">logout</a>
+        </div>
+       </div>
+   <div class="dashboard-menu">
+       <div class="menu">
+       <ul>
+           <li><a href="/studentdash?username=<%=data%>">Profile</a></li>
+           <li><a href="/studentdash/teacher?username=<%=data%>&message=Enter subject">Teacher</a></li>
+           <li><a href="">Classes further</a></li>
+           <li><a href="/studentdash/classesdone?username=<%=data%>">Classes Done</a></li>
+           <li><a href="/booksite?username=<%=data%>">Get a Book</a></li>
+        </ul>
+       </ul>
+    </div>
+   </div>
+   <div class="main-container">
+       <div class="form-details">
+      <table>
+        <tr>
+        <th>first name</th>
+          <th>Classtopic</th>
+          <th>time</th>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+       
+            <%classes.forEach((data)=>{%>
+              <%if(data.status===null){%>
+                <tr>
+                <td><%=data.classTopic%></td>
+                <td><%=data.classTopic%></td>
+                <td><%=data.classTopic%></td>
+                 <td><%=data.subject%></td>
+                 <td><form action="/scheduledclasses/submit/<%=data._id%>?username=<%=data.username1%>&teacherID=<%=data.teacherID%>" method="POST"><select name="status" id="status">
+                    <option value="done">done</option>
+                    <option value="cancel">cancel</option>
+                 </select>
+                 <input type="submit">
+                </form></td>
+                </tr>
+                <%}%>
+                <%})%>
+           
+          
+      </table>
+  </div>
+   </div>
+</body>
+</html>
