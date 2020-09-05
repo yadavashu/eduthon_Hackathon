@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Site</title>
+    <link rel="stylesheet" href="/stylesheets/booksite.css">
+</head>
+<body>
+    <div class="navmenu">
+        hii<%=data%>
+        <a href="">Logout</a>
+        <a href="/cart?username=<%=data%>">Cart</a>
+        <a href="/booksite/contribook?username=<%=data%>">Order a book</a>
+        <a href="/orderhistory?username=<%=data%>">Order History</a>
+    </div>
+    <div class="allbooks">
+        <%name.fuse.forEach((sata)=>{%>
+            <div class="card">
+                <img src="./uploads/<%=sata.image%>" alt="Avatar" style="width:20%">
+                <div class="container">
+                  <h4><b><%=sata.BookTitle%></b></h4>
+                  <p><%=sata.subject%></p>
+                  
+                </div>
+              </div>
+        <%})%>
+    </div>
+</body>
+</html>

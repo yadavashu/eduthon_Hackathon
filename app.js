@@ -14,6 +14,11 @@ const contrischeduledRouter=require('./routes/scheduled')
 const studentdashRouter=require('./routes/studentdash')
 const studenteacherRouter=require('./routes/studenteacher')
 const studentscheduledclassesRouter=require('./routes/scheduledclasses')
+const booksiteRouter=require('./routes/booksite')
+const contriabookRouter=require('./routes/contriabook')
+const cartRouter=require('./routes/cart')
+const relatedRouter=require('./routes/addressrelated')
+const orderhistoryRouter=require('./routes/orderhistory')
 
 const portname='localhost'
 const port=3000
@@ -38,6 +43,11 @@ app.use('/scheduled',contrischeduledRouter)
 app.use('/studentdash',studentdashRouter)
 app.use('/studenteacher',studenteacherRouter)
 app.use('/scheduledclasses',studentscheduledclassesRouter)
+app.use('/booksite',booksiteRouter)
+app.use('/contriabook',contriabookRouter)
+app.use('/cart',cartRouter)
+app.use('/related',relatedRouter)
+app.use('/orderhistory',orderhistoryRouter)
 app.use('/',mainRouter)
 
 

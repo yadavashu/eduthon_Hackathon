@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navmenu">
+        <%=data%>
+        <a href="">Logout</a>
+        <a href="">Cart</a>
+       
+    </div>
+    <div class="formforabook">
+        <form action="/contriabook/upload?username=<%=data%>" method="POST" enctype="multipart/form-data">
+            <input type="text" name="username" placeholder="username">
+            <input type="text" name="email" placeholder="email">
+            <input type="text" name="BookTitle" placeholder="BookTitle">
+            <input type="text" name="subject" placeholder="Subject">
+            <input type="text" name="stock" placeholder="stock">
+            <input type="file" name="file">
+            <button>submit</button>
+         </form>
+         <%=msg%>
+    </div>
+</body>
+</html>

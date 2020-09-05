@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Site</title>
+    <link rel="stylesheet" href="/stylesheets/booksite.css">
+</head>
+<body>
+    <div class="navmenu">
+        hii<%=data%>
+        <a href="">Logout</a>
+        <a href="">Cart</a>
+        
+    </div>
+
+    <div>
+        <div class="enter-address">
+            <form action="/related/address?username=<%=data%>" method="POST">
+                <input type="text" name="address" placeholder="Address">
+                <button>Submit</button>
+            </form>
+        </div>
+        <div class="existaddress">
+         <form action="/related/exist?username=<%=data%>" method="POST"> 
+                <input type="radio" name="existaddress" >
+                <label for="saved address">Used saved Address</label>
+                <button>Submit</button>
+            </form>
+        </div>
+        <%=msg1%>
+        <%=msg2%>
+    </div>
+    <div>
+        <div class="enter-mail">
+            <form action="/related/mail?username=<%=data%>" method="POST">
+                <input type="text" name="email" placeholder="email">
+                <button>Submit</button>
+            </form>
+        </div>
+        <div class="existemail">
+         <form action="/related/existmail?username=<%=data%>" method="POST">
+                <input type="radio" name="existemail" >
+                <label for="saved address">Used default email</label>
+                <button>Submit</button>
+            </form>
+        </div>
+    </div>
+    <div><%=msg3%></div>
+    <div class="allbooks">
+        <%books.forEach((sata)=>{%>
+            <div class="card">
+                <img src="./uploads/<%=sata.image%>" alt="Avatar" style="width:20%">
+                <div class="container">
+                  <h4><b><%=sata.BookTitle%></b></h4>
+                  <p><%=sata.subject%></p>
+                  
+                </div>
+              </div>
+        <%})%>
+
+    </div>
+    <button><a href="/cart/order?username=<%=data%>">place an order</a></button>
+    <%=msg%>
+    <button><a href="/cart/delete?username=<%=data%>">clear Cart</a></button>
+</body>
+</html>
