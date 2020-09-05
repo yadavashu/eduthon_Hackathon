@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main page</title>
+</head>
+<body>
+    You are on student page.
+    <div class="main-container">
+        <div class="signup">
+            <form action="/student/signup" method="POST">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname"> 
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username">   
+                <label for="password">Password</label>
+                <input type="password" id="password1" name="password1"> 
+                <label for="password2">Password</label>
+                <input type="password" id="password2" name="password2"> 
+                <button id="submit">submit</button>
+            </form>
+            <form action="/student/upload" method="POST" enctype="multipart/form-data" >
+                <div>
+                <label for="Certificate">Pwd Certficate</label>
+                <input type="file" id="files" name="file"> 
+                <label for="file">Choose File</label>
+            </div>
+            <input type="submit" value="submit">
+            </form>
+            <%if(image){%>
+            <p id="image"><%=image%><a href="/student/delete/<%=id%>">Delete</a></p>
+            <%}%>
+        </div>
+        <div class="login">
+            <form action="/student/login" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username1" name="username">   
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"> 
+            <button id="submit1">submit</button>
+            </form>
+        </div>
+        <p id="para"><%=data%></p>
+       
+    </div>
+    <script>        
+        if (window.performance) {
+           
+        }
+        if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+        location.href="http://localhost:3000/student?msg="
+        } else {
+        }
+    </script>    
+</body>
+</html>

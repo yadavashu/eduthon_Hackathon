@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main page</title>
+</head>
+<body>
+    You are on student page.
+    <div class="main-container">
+        <div class="signup">
+            <form action="/contributor/signup" method="POST">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname"> 
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+                <label for="qual">Latest Qualification</label>
+                <input type="text" id="qual" name="qualification">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username">   
+                <label for="password">Password</label>
+                <input type="password" id="password1" name="password1"> 
+                <label for="password2">Password</label>
+                <input type="password" id="password2" name="password2"> 
+                <button id="submit">submit</button>
+            </form>
+            
+        </div>
+        <div class="login">
+            <form action="/contributor/login" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username1" name="username">   
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"> 
+            <button id="submit1">submit</button>
+            </form>
+        </div>
+        <%=data%>
+    </div>
+    <script>        
+        if (window.performance) {
+           
+        }
+        if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+        location.href="http://localhost:3000/contributor?msg="
+        } else {
+        }
+    </script>   
+</body>
+</html>
