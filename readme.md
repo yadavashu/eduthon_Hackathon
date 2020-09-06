@@ -13,3 +13,6 @@ after this:-run npm run dev
 the pproject will be live...
 
 ppt is oneoath.pdf
+
+
+https://drive.google.com/file/d/13N04LcGp1nTgFWw5ALYJfy-7mP4H34Qe/view?usp=sharing link for video sharing
