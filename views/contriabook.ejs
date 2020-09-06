@@ -4,26 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Site</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/style4.css">
 </head>
 <body>
-    <div class="navmenu">
-        <%=data%>
-        <a href="">Logout</a>
-        <a href="">Cart</a>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+    <a class="navbar-brand" href="/booksite?username=<%=data%>"><img src="/images/arrow.svg" style="width:20px;">  Back</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="menu">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/cart?username=<%=data%>"><img src="/images/cart.svg" style="width:20px;">  Cart <span class="sr-only">(current)</span></a>
+        </li>
        
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img src="/images/book2.svg" style="width:20px;">  Donate a Book</a>
+        </li>
+      </ul>
+      </div>
     </div>
-    <div class="formforabook">
-        <form action="/contriabook/upload?username=<%=data%>" method="POST" enctype="multipart/form-data">
-            <input type="text" name="username" placeholder="username">
-            <input type="text" name="email" placeholder="email">
-            <input type="text" name="BookTitle" placeholder="BookTitle">
-            <input type="text" name="subject" placeholder="Subject">
-            <input type="text" name="stock" placeholder="stock">
-            <input type="file" name="file">
-            <button>submit</button>
-         </form>
-         <%=msg%>
-    </div>
+</div>
+  </nav>
+
+  <div class="container form-info">
+    <form action="/contriabook/upload?username=<%=data%>" method="POST" enctype="multipart/form-data">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Username</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Username" name="username">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Email</label>
+            <input type="text" class="form-control" id="inputPassword4" placeholder="Email" name="email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Book Title</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Book Title" name="BookTitle">
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Subject</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Subject" name="subject">
+        </div>
+        <div class="form-group">
+            <label for="inputAddress3">Stock</label>
+            <input type="text" class="form-control" id="inputAddress3" placeholder="Stock" name="stock">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress4">Image</label>
+            <input type="file" class="form-control" id="inputAddress4"  name="file">
+          </div>
+        
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+      
+  </div>
+  <div id="info-de">
+      <p><%=msg%></p>
+  </div>
+    
+      <footer>
+      <div class="footer">
+        <div class="container">
+          <div class="row icons">
+            <div class="col-3  check">
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-twitter"></a>
+              <a href="#" class="fa fa-linkedin"></a>
+              <a href="#" class="fa fa-instagram"></a>
+            </div>
+            
+            </div>
+  
+            <div class="row cc">
+              <div class="col  check">
+              Copyrights &#x1f16d; 2020
+              </div>
+            </div>
+  
+            <div class="row team">
+              <div class="col  check">
+              Made with &#10084; by Team C@rbon
+              </div>
+            </div>
+          </div>
+        </div>
+  </footer>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
 </body>
 </html>

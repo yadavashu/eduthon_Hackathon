@@ -1,0 +1,167 @@
+
+
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0px;
+    margin: 0px;
+    background: #f6f6f6;
+}
+header{
+   background-image: url('images/darkness.png');
+    height: 66px;
+    color: white;
+}
+header .toggle{
+    display: none;
+}
+
+header .logo{
+    float: left;
+    margin-left: 2em;
+    height: inherit;
+    
+}
+header .logo-text{
+    margin: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+header .logo-text span{
+    color: lightseagreen;
+}
+header ul{
+    float: right;
+    height: inherit;
+    
+}
+#hide{
+    background-color:#46878a;
+    list-style: none;
+    text-align: center;
+    top: 100px;
+    display: none;
+}
+
+
+#hide a{
+    color: black;
+    display: block;
+    padding: 2px;
+    font-size: 1em;
+}
+
+
+#hide a:hover{
+    background-color: #3d595a;
+    transition: 0.5s;
+    height: inherit;
+    color: white;
+    text-decoration: none;
+}
+
+ 
+  .sidebar {
+    
+    height: 100%;
+    margin-top:66px;
+    width: 160px;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 16px;
+    list-style: none;
+  }
+  
+ 
+  .sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+  }
+  
+ 
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  
+  .main {
+    margin-left: 160px;
+    padding: 0px 10px;
+  }
+ 
+.box{
+    margin-left: 400px;
+    margin-top: 150px;
+    margin-right: 200px;
+    border:solid;
+    border-width:2px;
+    border-color:blueviolet;
+    border-radius:4px;
+    background-color:skyblue;
+    
+}
+.para p{
+    padding:5px 8px 5px 8px;
+
+}
+@media screen and (max-width:992px)
+{
+  .menu{
+      margin-left:unset;
+  }
+
+
+}
+  
+@media only screen and (max-width: 1000px){
+
+    header .toggle{
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 1;
+        color: white;
+        
+    }
+
+      header a:hover {
+       
+        color: white;
+      }
+    .sidebar{
+        display: none;
+    }
+    #hide{
+        display: inherit;
+    }
+    
+}
+
+
+@media only screen and (min-width: 751px){
+    #hide{
+        display: none;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .box{
+        margin-left:200px;
+    }
+}
+
+@media screen and (max-width:500px){
+    .box{
+        margin-left:30px;
+        margin-right:30px;
+    }
+}

@@ -1,61 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>main page</title>
-</head>
-<body>
-    You are on student page.
-    <div class="main-container">
-        <div class="signup">
-            <form action="/student/signup" method="POST">
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="firstname">
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lastname"> 
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username">   
-                <label for="password">Password</label>
-                <input type="password" id="password1" name="password1"> 
-                <label for="password2">Password</label>
-                <input type="password" id="password2" name="password2"> 
-                <button id="submit">submit</button>
-            </form>
-            <form action="/student/upload" method="POST" enctype="multipart/form-data" >
-                <div>
-                <label for="Certificate">Pwd Certficate</label>
-                <input type="file" id="files" name="file"> 
-                <label for="file">Choose File</label>
-            </div>
-            <input type="submit" value="submit">
-            </form>
-            <%if(image){%>
-            <p id="image"><%=image%><a href="/student/delete/<%=id%>">Delete</a></p>
-            <%}%>
-        </div>
-        <div class="login">
-            <form action="/student/login" method="POST">
-            <label for="username">Username</label>
-            <input type="text" id="username1" name="username">   
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password"> 
-            <button id="submit1">submit</button>
-            </form>
-        </div>
-        <p id="para"><%=data%></p>
+    <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="/stylesheets/signup1.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <title>signup1</title>
+    </head>
+    <body>
+     
+        
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-image: url('/images/darkness.png');">
+        <div class="container">
+        <a class="navbar-brand" href="/"><img src="images/arrow.svg" style="width:20px;">  Back</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
        
     </div>
+      </nav>
+      <div class="wrapper">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="signup col-md-6 mb-3 justify-content-center content">
+                    <form action="/student/signup"style="background-color:aliceblue;border:solid;border-width:0.2px;border-color: blueviolet;" method="POST">
+                        <h2>Register</h2>
+		                <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="fname">First name</label>
+                            <input type="text" class="form-control" id="fname" name="firstname">
+                            
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="lname">Last name</label>
+                            <input type="text" class="form-control" id="lname" name="lastname">
+                            
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" >
+                            
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username">
+                            
+                          </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password1" name="password1" >
+                                
+                              </div>
+                              <div class="col-md-6 mb-3">
+                                <label for="password2">Re-Enter Password</label>
+                                <input type="password" class="form-control" id="password2" name="password2">
+                                
+                              </div>
+                        </div>
+                        <div class="form-row">
+                            <button class="btn" id="submit">submit</button>
+                          
+                        </div>
+                        
+                      </form>
+                      <form action="/student/upload" style="background-color:aliceblue;border:solid;border-width:0.2px;border-color: blueviolet;width:90%;" method="POST" enctype="multipart/form-data" >
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="Certificate">Pwd Certficate</label>
+                                <input type="file" id="files" name="file"> 
+        
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="file">Choose File</label>
+        
+                            </div>
+                            
+                          </div>
+                        <input class="btn"   type="submit" value="submit">
+                    </form> 
+                        <div class="b-info"> <%if(image){%>
+                          <%=image%><a href="/student/delete/<%=id%>">Delete</a></p>
+                          <%}%>
+                        <%=msg1%></div>
+                </div>
+                <div class="login col-md-6 mb-3 justify-content-center content">
+                    <form action="/student/login" style="background-color:aliceblue;border:solid;border-width:0.2px;border-color: blueviolet;"method="POST">
+                        <h2>Login</h2>
+		                <p class="hint-text">Enter your username and password to log in.</p>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-6">
+                              <label for="username">Username</label>
+                              <input type="text" class="form-control" id="username1" name="username">
+                              
+                            </div>
+                            
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-6">
+                              <label for="password">Password</label>
+                              <input type="password" class="form-control" id="password" name="password">
+                              
+                            </div>
+                            
+                        </div><br>
+                        <div class="form-row">
+                            <button class="btn" id="submit1">submit</button>
+                        </div>
+                    </form>
+                    <div class="b-info">
+                      <%=msg2%>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    <footer>
+      <div class="footer" style="background-image: url('/images/darkness.png');">
+        <div class="container">
+          <div class="row icons">
+            <div class="col-3  check">
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="https://twitter.com/oneoath1" class="fa fa-twitter"></a>
+              <a href="#" class="fa fa-linkedin"></a>
+              <a href="https://www.instagram.com/one__oath/" class="fa fa-instagram"></a>
+            </div>
+            
+            </div>
+  
+            <div class="row cc">
+              <div class="col  check">
+              Copyrights &#x1f16d; 2020
+              </div>
+            </div>
+  
+            <div class="row team">
+              <div class="col  check">
+              Made with &#10084; by Team C@rbon
+              </div>
+            </div>
+          </div>
+        </div>
+    </footer>
     <script>        
-        if (window.performance) {
-           
-        }
-        if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
-        location.href="http://localhost:3000/student?msg="
-        } else {
-        }
-    </script>    
-</body>
+      if (window.performance) {
+         
+      }
+      if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+      location.href="http://localhost:3000/student?msg="
+      } else {
+      }
+  </script>    
+    </body>
 </html>

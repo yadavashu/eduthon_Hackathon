@@ -1,4 +1,163 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body {
+	color: #fff;
+	background: #63738a;
+	font-family: 'Roboto', sans-serif;
+}
 
+
+.wrapper{
+    margin: 40px 20px;
+}
+
+.content{
+    margin-top: 250px;
+}
+
+.form-control {
+	height: 40px;
+	box-shadow: none;
+	color: #969fa4;
+}
+
+.form-control, .btn {        
+    border-radius: 3px;
+}
+.signup {
+	width: 450px;
+	margin: 0 auto;
+	padding: 30px 0;
+  	font-size: 15px;
+}
+.signup h2 {
+	color: #636363;
+	margin: 0 0 15px;
+	position: relative;
+	text-align: center;
+}
+.signup h2:before, .signup h2:after {
+	content: "";
+	height: 2px;
+	width: 30%;
+	background: #d4d4d4;
+	position: absolute;
+	top: 50%;
+	z-index: 2;
+}	
+.signup h2:before {
+	left: 0;
+}
+.signup h2:after {
+	right: 0;
+}
+.signup .hint-text {
+	color: rgb(133, 133, 133);
+	margin-bottom: 30px;
+	text-align: center;
+}
+.signup form {
+	color: rgb(133, 133, 133);
+	border-radius: 3px;
+	margin-bottom: 15px;
+	background: #bababd;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 30px;
+}
+
+.signup .btn {        
+	font-size: 16px;
+	font-weight: bold;		
+	min-width: 140px;
+    background-color: #05a305;
+    
+}
+
+.login {
+    width: 450px;
+    
+	margin: 0 auto;
+	padding: 30px 0;
+  	font-size: 15px;
+}
+.login h2 {
+	color: #636363;
+	margin: 0 0 15px;
+	position: relative;
+	text-align: center;
+}
+.login h2:before, .login h2:after {
+	content: "";
+	height: 2px;
+	width: 30%;
+	background: #d4d4d4;
+	position: absolute;
+	top: 50%;
+	z-index: 2;
+}	
+.login h2:before {
+	left: 0;
+}
+.login h2:after {
+	right: 0;
+}
+.login .hint-text {
+	color: rgb(133, 133, 133);
+	margin-bottom: 30px;
+	text-align: center;
+}
+.login form {
+	color: rgb(133, 133, 133);
+	border-radius: 3px;
+	margin-bottom: 15px;
+	background: #bababd;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 30px;
+}
+
+.login .btn {        
+	font-size: 16px;
+	font-weight: bold;		
+	min-width: 140px;
+    background-color: #05a305;
+    margin-bottom: 189px;
+}
+.footer
+{
+    background-color: black;
+    height:30vh;
+}
+.check{
+    
+    display: flex;
+    justify-content:center;
+    justify-content: space-around;
+	margin-top:2rem;
+	
+}
+
+.cc{
+     
+    display: flex;
+    justify-content:center;
+    color:white;
+
+}
+.team{
+  display: flex;
+  justify-content:center;
+  color:white;
+}
+
+.footer{
+  background-image: url('images/darkness.png');
+}
+
+.bgp{
+  background-image: url('images/darkness.png');
+}
 
 .navbar{
     background-image: url('images/darkness.png');
@@ -184,52 +343,25 @@
 .table td img{
   width:80px;
 }
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 250px;
-  height:300px;
+.signup{
+	border-radius:50px;
 }
-.card,.con{
-  display: flex;
-  flex-direction: column;
-  justify-content:center;
-  align-items:center;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.con{
-  padding: 2px 16px;
-}
-
-#btncart{
-  border:none;
-  height:2rem;
-  background: chocolate;
-  color:white;
-  border-radius: 5px;
-}
-.main-info{
-  margin-top:6rem;
-  margin-bottom: 6rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap:wrap;
-}
-
-.card{
-  margin:1rem 1rem 1rem 1rem;
-}
-
-
 @media screen and (max-width:992px)
 {
   .menu{
       margin-left:unset;
   }
 
+
+}
+@media screen and (max-width:500px)
+{
+	.signup h2{
+		font-size:1rem;
+	}
+	
+	.login h2{
+		font-size:1rem;
+	}
 
 }

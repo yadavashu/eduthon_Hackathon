@@ -3,69 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Dashboard</title>
-    <link rel="stylesheet" href="/stylesheets/studashboard.css">
-    <link rel="stylesheet" href="/stylesheets/contrischedule.css">
+    <title>Book Site</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/teachers.css">
 </head>
 <body>
-    <div class="main-details">
-        <div class="details">
-            <p>hii  <%=data%></p>
-           <a href="">logout</a>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-image: url('/images/darkness.png');">
+        <div class="container">
+        <a class="navbar-brand" href="#"> <%=data%></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="menu">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href=" ">Profile<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/studentdash/teacher?username=<%=data%>&message=Enter subject">Teachers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/studentdash/attendCLasses?username=<%=data%>">Future Classes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/studentdash/classesdone?username=<%=data%>">Classes done</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/booksite?username=<%=data%>">Buy a Book</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/student">Log out</a>
+              </li>
+          </ul>
+          </div>
         </div>
-       </div>
-   <div class="dashboard-menu">
-       <div class="menu">
-       <ul>
-           <li><a href="/studentdash?username=<%=data%>">Profile</a></li>
-           <li><a href=" ">Teacher</a></li>
-           <li><a href="/studentdash/attendCLasses?username=<%=data%>">Classes further</a></li>
-           <li><a href="/studentdash/classesdone?username=<%=data%>">Classes Done</a></li>
-           <li><a href="/booksite?username=<%=data%>">Get a Book</a></li>
-        </ul>
-       </ul>
     </div>
-   </div>
-   <div class="main-container">
-       <div class="form-details">
-       <form action="/studenteacher?username=<%=data%>" method="POST">
-           <input type="search" name="search" placeholder="Subject">
-           <button>submit</button>
-       </form>
-      <%=message%>
-      <%=msg%>
-      <table>
-        <tr>
-            <th>first name</th>
-          <th>Classtopic</th>
-          <th>time</th>
-          <th>Date</th>
-          <th>Confirmation</th>
-        </tr>
-      <%teachers.forEach((teacher)=>{%>
-        <%if(teacher.status!=='done'){%>
-        <tr>
-           <td><%=teacher.firstname%></td>
-           <td><%=teacher.classTopic%></td>
-           <td><%=teacher.time%></td>
-           <td><%=teacher.date%></td>
+      </nav>
 
-           <%if(teacher.studentRegistered.length>=teacher.capacity){%>
-            <td>Seats Full!</td>
-            <%}else if(teacher.studentRegistered.length<teacher.capacity) {%>
-                <td><form action="/studenteacher/submit/<%=teacher._id%>?username=<%=data%>&subject=<%=teacher.subject%>" method="POST">
-                    <input type="text" name="firstname" placeholder="First Name">
-                    <input type="text" name="username" placeholder="username">
-                    <input type="text" name="email" placeholder="Email">
-                   <button>submit</button>
-                </form><%=msg1%><%=msg2%></td>  
 
-          <%}%>
-        </tr>
-        <%}%>
-      <%})%>
-      </table>
-  </div>
-   </div>
+      <div class="container info">
+        <form style="padding:10px 10px 10px 10px;" action="/studenteacher?username=<%=data%>" method="POST">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Enter Subject </label>
+                <input type="search" class="form-control" id="inputEmail4" placeholder="Subject" name="search">
+                <br>
+                <input type="submit" class="btn btn-primary" value="submit" style="height:2.5rem;">
+              </div>
+              
+           
+            </div>
+          </form>
+          <div class="r-info"><%=msg%></div>
+
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Class Topic</th>
+               
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Confirmation</th>
+              </tr>
+            </thead>
+           <tbody>
+            <%teachers.forEach((teacher)=>{%>
+                <%if(teacher.status!=='done'){%>
+                <tr>
+                   <td><%=teacher.firstname%></td>
+                   <td><%=teacher.classTopic%></td>
+                   <td><%=teacher.date%></td>
+                   <td><%=teacher.time%></td>
+        
+                   <%if(teacher.studentRegistered.length>=teacher.capacity){%>
+                    <td>Seats Full!</td>
+                    <%}else if(teacher.studentRegistered.length<teacher.capacity) {%>
+                        <td><form action="/studenteacher/submit/<%=teacher._id%>?username=<%=data%>&subject=<%=teacher.subject%>" method="POST">
+                            <input type="text" name="firstname" placeholder="First Name">
+                            <input type="text" name="username" placeholder="username">
+                            <input type="text" name="email" placeholder="Email">
+                           <button>submit</button>
+                        </form><%=msg1%><%=msg2%></td>  
+        
+                  <%}%>
+                </tr>
+                <%}%>
+              <%})%>
+            </tbody>
+          </table>
+      </div>
+
+
+
+      <footer>
+      <div class="footer" style="background-image: url('/images/darkness.png');">
+        <div class="container">
+          <div class="row icons">
+            <div class="col-3  check">
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-twitter"></a>
+              <a href="#" class="fa fa-linkedin"></a>
+              <a href="#" class="fa fa-instagram"></a>
+            </div>
+            
+            </div>
+  
+            <div class="row cc">
+              <div class="col  check">
+              Copyrights &#x1f16d; 2020
+              </div>
+            </div>
+  
+            <div class="row team">
+              <div class="col  check">
+              Made with &#10084; by Team C@rbon
+              </div>
+            </div>
+          </div>
+        </div>
+  </footer>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
 </body>
 </html>

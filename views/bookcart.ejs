@@ -4,64 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Site</title>
-    <link rel="stylesheet" href="/stylesheets/booksite.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/cart.css">
 </head>
 <body>
-    <div class="navmenu">
-        hii<%=data%>
-        <a href="">Logout</a>
-        <a href="">Cart</a>
-        
-    </div>
 
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+        <a class="navbar-brand" href="/booksite?username=<%=data%>"><img src="images/arrow.svg" style="width:20px;">  Back</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="menu">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"><img src="images/cart.svg" style="width:20px;">  Cart <span class="sr-only">(current)</span></a>
+            </li>
+            
+          </ul>
+          </div>
+        </div>
+    </div>
+      </nav>
+
+      <div class="content">
+
+     <div class="toto">   
     <div>
         <div class="enter-address">
             <form action="/related/address?username=<%=data%>" method="POST">
                 <input type="text" name="address" placeholder="Address">
-                <button>Submit</button>
+                <button class="su1">Submit</button>
             </form>
         </div>
         <div class="existaddress">
          <form action="/related/exist?username=<%=data%>" method="POST"> 
                 <input type="radio" name="existaddress" >
                 <label for="saved address">Used saved Address</label>
-                <button>Submit</button>
+                <button class="su12"><img src="images/tick.svg" alt=""></button>
             </form>
         </div>
-        <%=msg1%>
+        <div class="address">
+          <%=msg1%>
         <%=msg2%>
+        </div>
+        
     </div>
     <div>
         <div class="enter-mail">
             <form action="/related/mail?username=<%=data%>" method="POST">
                 <input type="text" name="email" placeholder="email">
-                <button>Submit</button>
+                <button class="su1">Submit</button>
             </form>
         </div>
         <div class="existemail">
          <form action="/related/existmail?username=<%=data%>" method="POST">
                 <input type="radio" name="existemail" >
                 <label for="saved address">Used default email</label>
-                <button>Submit</button>
+                <button class="su12"><img src="images/tick.svg" alt=""></button>
             </form>
         </div>
     </div>
-    <div><%=msg3%></div>
-    <div class="allbooks">
-        <%books.forEach((sata)=>{%>
-            <div class="card">
-                <img src="./uploads/<%=sata.image%>" alt="Avatar" style="width:20%">
-                <div class="container">
-                  <h4><b><%=sata.BookTitle%></b></h4>
-                  <p><%=sata.subject%></p>
-                  
-                </div>
-              </div>
-        <%})%>
+  </div>
+        <div class="tablee">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                
+                <th scope="col">Image</th>
+                <th scope="col">Book Title</th>
+                <th scope="col">Subject</th>
+              </tr>
+            </thead>
 
-    </div>
-    <button><a href="/cart/order?username=<%=data%>">place an order</a></button>
-    <%=msg%>
-    <button><a href="/cart/delete?username=<%=data%>">clear Cart</a></button>
+            <tbody>
+
+              <%books.forEach((sata)=>{%>
+                    <tr>
+                   <td> <img src="./uploads/<%=sata.image%>" alt="Avatar" ></td> 
+                   <td><%=sata.BookTitle%></td>
+                      <td><%=sata.subject%></td> 
+                    </tr>
+            <%})%>
+                   
+            </tbody>
+          </table>
+          
+          </div>
+          <div class="empty">
+            <p><%=msg3%></p>
+          </div>
+          <div class="btns">
+            <button><a href="/cart/order?username=<%=data%>">place an order</a></button>
+            <button><a href="/cart/delete?username=<%=data%>">clear Cart</a></button>
+          </div>
+          <div class="msg">
+            <p><%=msg%></p>
+          </div>
+         
+      </div>
+
+      <footer>
+      <div class="footer">
+        <div class="container">
+          <div class="row icons">
+            <div class="col-3  check">
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-twitter"></a>
+              <a href="#" class="fa fa-linkedin"></a>
+              <a href="#" class="fa fa-instagram"></a>
+            </div>
+            
+            </div>
+  
+            <div class="row cc">
+              <div class="col  check">
+              Copyrights &#x1f16d; 2020
+              </div>
+            </div>
+  
+            <div class="row team">
+              <div class="col  check">
+              Made with &#10084; by Team C@rbon
+              </div>
+            </div>
+          </div>
+        </div>
+  </footer>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
 </body>
 </html>

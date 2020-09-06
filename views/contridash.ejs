@@ -3,26 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contributor Dashboard</title>
-    <link rel="stylesheet" href="/stylesheets/studashboard.css">
+    <title>Book Site</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/contridash.css">
 </head>
 <body>
-    <div class="main-details">
-        <div class="details">
-        <p>hii  <%=data%></p>
-           <a href="">logout</a>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-image: url('/images/darkness.png');">
+        <div class="container">
+        <a class="navbar-brand" href="#"> <%=data%></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="menu">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/contridash?username=<%=data%>">Profile<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contridash/schedule?username=<%=data%>"> Schedule a class</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contridash/scheduledclasses?username=<%=data%>">Classes Scheduled</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contridash/contriclassesdone?username=<%=data%>&status=done">Classes done</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contributor">Log out</a>
+              </li>
+          </ul>
+          </div>
         </div>
-       </div>
-   <div class="dashboard-menu">
-       <div class="menu">
-       <ul>
-           <li><a href="/contridash?username=<%=data%>">Profile</a></li>
-           <li><a href="/contridash/schedule?username=<%=data%>">Schedule a class</a></li>
-           <li><a href="/contridash/scheduledclasses?username=<%=data%>">Classes Scheduled</a></li>
-           <li><a href="/contridash/contriclassesdone?username=<%=data%>&status=done">Classes Done</a></li>
-       </ul>
     </div>
-   </div>
-   
+      </nav>
+
+
+      <div class="container info">
+        <div class="para" style="padding:15px 15px 15px 15px;">
+            <p>
+              Thank you for joining Together. We would like to extend a warm welcome and we are glad to have you here. We recognize that your time is valuable and we are seriously flattered that you chose to join us in this mission of educating and helping others. We are highly obliged by your gesture of taking the time out for the needy and prving the fact that “The beautiful thing about learning is that no one can take it away from you.” We are so excited to work with you.
+    <br>
+    How to work?
+    <br>
+    As you are already here, we assume that you are already registered. The purpose of our project is to reach out to the needy and unprivileged ones. So we provide you both online and offline mediums to teach as per your convenience you can schedule your class timetable and let the students know. By timetable, we mean that whenever you are free you can schedule a class offline or online and let the students know. In offline mode you will have to gather some students from nearby places  and arrange some place for you to teach as per your convenience, however the students would also let you know if they can reach that location. In online mode you can share the link or the video of your session so students can join and learn with you.
+            </p>
+          </div>
+      </div>
+      <footer>
+      <div class="footer" style="background-image: url('/images/darkness.png');">
+        <div class="container">
+          <div class="row icons">
+            <div class="col-3  check">
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-twitter"></a>
+              <a href="#" class="fa fa-linkedin"></a>
+              <a href="#" class="fa fa-instagram"></a>
+            </div>
+            
+            </div>
+  
+            <div class="row cc">
+              <div class="col  check">
+              Copyrights &#x1f16d; 2020
+              </div>
+            </div>
+  
+            <div class="row team">
+              <div class="col  check">
+              Made with &#10084; by Team C@rbon
+              </div>
+            </div>
+          </div>
+        </div>
+  </footer>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
 </body>
 </html>

@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+.navbar{
+    background-image: url('.images/darkness.png');
+}
+.navbar-brand{
+    font-family:'Anton', sans-serif;
+}
+.midto{
+    background-image: url('images/darkness.png');
+    height:40vh;
+    /* -webkit-box-shadow: 0 0 20px #2d7d2d;
+        box-shadow: 0 0 20px #2d7d2d; */
+        -webkit-box-shadow: 0 0 5px 2px #2d7d2d;
+        -moz-box-shadow: 0 0 5px 50px #2d7d2d;
+        box-shadow: 0 0 15px 5px#2d7d2d;
+} 
+.footer
+{
+    background-color: black;
+    height:30vh;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 26px;
+    width: 40px;
+    text-align: center;
+    text-decoration: none;
+    border-radius:10px;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  
+
+  .menu{
+    
+      margin-left:34rem;
+      width:60%;
+     
+  }
+  .menu ul li{
+      margin-left:1rem;
+      margin-right:1rem;
+  }
+
+
+  .imagesslide{
+      margin-bottom:5rem;
+  }
+
+
+  .books-info,.student-info{
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+  .teacher-image {
+   
+    display: flex;
+    justify-content: center;
+    margin-bottom:1rem;
+  }
+  .teacher-image img{
+      width:50%;
+  }
+
+  .teacher-desc{
+      text-align: center;
+  }
+
+  .student-image {
+    
+    display: flex;
+    justify-content: center;
+    margin-bottom:1rem;
+  }
+
+  .student-image img{
+     
+    width:50%;
+}
+.student-desc{
+    text-align: center;
+}
+
+.books-image {
+    
+    display: flex;
+    justify-content: center;
+    margin-bottom:1rem;
+  }
+
+  .books-image img{
+     
+    width:50%;
+}
+.books-desc{
+    text-align: center;
+}
+
+.teacher-info{
+    position:relative;
+    top:2.6rem;
+}
+
+
+.chuu{
+    margin-bottom:4rem;
+}
+
+.midto{
+    margin-bottom:4rem;
+}
+
+.filto{
+   
+    height:40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pdf{
+    font-size:2rem;
+    color:white;
+    margin-bottom:0.5rem;
+}
+
+
+
+.btn button {
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+   
+    color: #FFFFFF;
+    font-size:1.5rem;
+    width: 12rem;
+    height:4rem;
+   border-radius:5px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    outline:none;
+
+  }
+  
+  .btn button:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+  
+  .btn button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+
+ 
+  .heading{
+     
+      display: flex;
+      justify-content: center;
+    font-size:2rem;
+  }
+
+  .pintu{
+      margin-bottom:4rem;
+  }
+  .icons{
+    display: flex;
+    justify-content:center;
+  }
+  .check{
+    
+      display: flex;
+      justify-content:center;
+      justify-content: space-around;
+      margin-top:2rem;
+  }
+
+  .cc{
+     
+      display: flex;
+      justify-content:center;
+      color:white;
+
+  }
+  .team{
+    display: flex;
+    justify-content:center;
+    color:white;
+  }
+
+  .footer{
+    background-image: url('images/darkness.png');
+  }
+
+
+
+  
+
+
+
+
+
+
+  @media screen and (max-width:992px)
+  {
+    .menu{
+        margin-left:unset;
+    }
+
+
+  }
+
+  @media screen and (max-width:450px){
+      .pdf{
+          font-size:1.5rem;
+      }
+
+      .teacher-info{
+          margin-bottom:4rem;
+      }
+  }
+
+ 

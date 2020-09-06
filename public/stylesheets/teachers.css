@@ -184,47 +184,19 @@
 .table td img{
   width:80px;
 }
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 250px;
-  height:300px;
-}
-.card,.con{
-  display: flex;
-  flex-direction: column;
-  justify-content:center;
-  align-items:center;
-}
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.info{
+    margin-top:6rem;
+    margin-bottom:10rem;
+    border:solid;
+    border-radius:5px;
+    border-width:2px;
+    border-color:blueviolet;
 }
-
-.con{
-  padding: 2px 16px;
+.r-info{
+    display: flex;
+    justify-content:center;
 }
-
-#btncart{
-  border:none;
-  height:2rem;
-  background: chocolate;
-  color:white;
-  border-radius: 5px;
-}
-.main-info{
-  margin-top:6rem;
-  margin-bottom: 6rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap:wrap;
-}
-
-.card{
-  margin:1rem 1rem 1rem 1rem;
-}
-
-
 @media screen and (max-width:992px)
 {
   .menu{
